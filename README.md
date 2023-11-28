@@ -1,2 +1,2 @@
 # 2023_git_practice
-first commit
+gitの練習
