@@ -93,6 +93,7 @@ git stash apply [stash名]
 ```
 
 例）　`git stash apply stash@{0}`
+
 現在いるブランチに変更が反映される
 
 4. 退避した作業を消す
@@ -101,8 +102,9 @@ git stash apply [stash名]
 git stash drop [stash名]
 ```
 
-stash名がstashのリストから削除される
 例）`git stash drop stash@{0}`
+
+stash名がstashのリストから削除される
 
 5. 3と4を一気に片付けるコマンド
 
