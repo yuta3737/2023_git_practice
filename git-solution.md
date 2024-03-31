@@ -44,10 +44,15 @@ git merge origin/develop
 git fetch origin [ブランチ名]
 ```
 
-2. 取得したブランチにチェックアウトする
+2. 取得したブランチにチェックアウトする。または、リモートと同じブランチをローカルに作成する
 
 ```
 git checkout origin/[ブランチ名]
+```
+
+```
+git checkout -b [新規ブランチ名] origin/[元にするブランチ名]
+
 ```
 
 ## 編集内容を取り消したい時
