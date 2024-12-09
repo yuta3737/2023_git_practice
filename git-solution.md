@@ -159,6 +159,8 @@ squash abcd123 最初のコミット
 git rebase --abort
 ```
 
+## git revert調査
+
 
 
 
