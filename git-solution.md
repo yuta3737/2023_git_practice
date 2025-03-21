@@ -1,36 +1,40 @@
+# gitコマンド集
+
 ## リモートリポジトリで自分が作業したブランチをマージした後に、マージを取り消したい時
+
 1. ローカルリポジトリのDevelopブランチにて
 
-```
+```bash
 git reset --hard HEAD^
 ```
 
 2. developブランチのマージしたコミットの一つ前にコミットに戻っていることを確認する
 
-```
+```bash
 git log
 ```
 
-3.  ローカルからリモートに反映
+3. ローカルからリモートに反映
 
-```
+```bash
 git push -f origin develop
 ```
 
 これでdevelopブランチがマージする前に戻る
 
-
 ## プルリクしてるものがコンフリクトした時
+
 ローカルでコンフリクトを解消したいので、
+
 1. リモートのdevelopブランチの内容をローカルに一時反映
 
-```
+```bash
 git fetch origin develop
 ```
 
 2. 作業ブランチにcheckoutして、developブランチの内容を作業ブランチに反映
 
-```
+```bash
 git merge origin/develop
 ```
 
@@ -40,25 +44,26 @@ git merge origin/develop
 
 1. コードレビューしたいリモートリポジトリの最新コミットを取得
 
-```
+```bash
 git fetch origin [ブランチ名]
 ```
 
 2. 取得したブランチにチェックアウトする。または、リモートと同じブランチをローカルに作成する
 
-```
+```bash
 git checkout origin/[ブランチ名]
 ```
 
-```
+```bash
 git checkout -b [新規ブランチ名] origin/[元にするブランチ名]
 
 ```
 
 ## 編集内容を取り消したい時
+
 ### 編集内容を取り消したい(addする前)
 
-```
+```bash
 git checkout [ファイル名]
 ```
 
@@ -66,7 +71,7 @@ git checkout [ファイル名]
 
 ### ステージングを取り消したい
 
-```
+```bash
 git checkout HEAD -- [ファイル名]
 ```
 
@@ -77,7 +82,7 @@ git checkout HEAD -- [ファイル名]
 
 1. まず変更を退避する
 
-```
+```bash
 git stash -u
 ```
 
@@ -85,7 +90,7 @@ git stash -u
 
 2. 退避した変更の一覧を見る
 
-```
+```bash
 git stash list
 ```
 
@@ -93,7 +98,7 @@ git stash list
 
 3. 退避していた変更を戻す
 
-```
+```bash
 git stash apply [stash名]
 ```
 
@@ -103,7 +108,7 @@ git stash apply [stash名]
 
 4. 退避した作業を消す
 
-```
+```bash
 git stash drop [stash名]
 ```
 
@@ -113,7 +118,7 @@ stash名がstashのリストから削除される
 
 5. 3と4を一気に片付けるコマンド
 
-```
+```bash
 git stash pop [stash名]
 ```
 
